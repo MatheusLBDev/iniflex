@@ -37,7 +37,7 @@ public class Main {
             FuncionarioService.aumentarSalario(funcionarios, 10);
             System.out.println("\n💰 Após aumento salarial:");
             funcionarios.forEach(f ->
-                    System.out.println(f.getNome() + ", " + Formatador.formatarMoeda(f.getSalario()) + ", " + f.getFuncao())
+                    System.out.println("Cargo= " + f.getFuncao() + ", " + "Nome= " + f.getNome() + ", " + "Salário: R$" +  Formatador.formatarMoeda(f.getSalario()))
             );
         } catch (FuncionarioException e) {
             System.err.println("Erro ao aumentar salário: " + e.getMessage());
@@ -67,7 +67,7 @@ public class Main {
         FuncionarioService.ordenarPorNome(funcionarios).forEach(f -> System.out.println("Nome= " + f.getNome()));
 
         BigDecimal totalSalarios = FuncionarioService.calcularTotalSalarios(funcionarios);
-        System.out.println("\n💵 Total dos salários: " + Formatador.formatarMoeda(totalSalarios));
+        System.out.println("\n💵 Total dos salários: R$" + Formatador.formatarMoeda(totalSalarios));
 
         System.out.println("\n📊 Quantidade de salários mínimos por funcionário:");
         Map<String, Double> salariosMinimos = FuncionarioService.calcularSalariosMinimos(funcionarios);

@@ -45,7 +45,7 @@ public class Funcionario extends Pessoa {
     public String toString() {
         return "Funcionário= " + getNome() +
                 ", data de nascimento= " + Formatador.formatarData(getDataNascimento()) +
-                ", salário= " + Formatador.formatarMoeda(salario) +
+                ", salário= R$" + Formatador.formatarMoeda(salario) +
                 ", cargo= " + funcao;
     }
 

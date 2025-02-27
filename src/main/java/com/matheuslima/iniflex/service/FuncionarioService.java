@@ -10,8 +10,9 @@ import java.time.Month;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static com.matheuslima.iniflex.util.Constantes.SALARIO_MINIMO;
+
 public class FuncionarioService {
-    private static final BigDecimal SALARIO_MINIMO = new BigDecimal("1212.00");
 
     public static void aumentarSalario(List<Funcionario> funcionarios, double percentual) {
         if (funcionarios == null || funcionarios.isEmpty()) {
