@@ -37,14 +37,11 @@ public class FuncionarioService {
 
     public static List<Funcionario> filtrarAniversariantes(List<Funcionario> funcionarios) {
         if (funcionarios == null || funcionarios.isEmpty()) {
-            throw new FuncionarioException("Erro: Lista de funcionários vazia ou nula.");
+            return Collections.emptyList();
         }
 
         return funcionarios.stream()
-                .filter(f -> {
-                    Month mes = f.getDataNascimento().getMonth();
-                    return mes == Month.OCTOBER || mes == Month.DECEMBER;
-                })
+                .filter(f -> EnumSet.of(Month.OCTOBER, Month.DECEMBER).contains(f.getDataNascimento().getMonth()))
                 .collect(Collectors.toList());
     }
 
